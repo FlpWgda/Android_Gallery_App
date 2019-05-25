@@ -1,4 +1,0 @@
-#Thu May 23 18:34:37 CEST 2019
-base.0=C\:\\Users\\hp\\Desktop\\Android-DirectoryChooser-master\\Gallery\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\3
-path.0=classes.dex
-renamed.0=classes.dex
