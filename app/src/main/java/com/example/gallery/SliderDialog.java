@@ -97,14 +97,7 @@ public class SliderDialog extends DialogFragment{
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     public boolean onMenuItemClick(MenuItem item) {
                         switch(item.getItemId()){
-                            case R.id.one:
-                                Log.d("one one one", "one one");
-                                return true;
-                            case R.id.two:
-                                Log.d("two two two", "onMenuItemClick: two ");
-                                return true;
                             case R.id.three:
-                                Log.d("three", "three");
 
                                 String path = imageUrls[mPager.getCurrentItem()];
 

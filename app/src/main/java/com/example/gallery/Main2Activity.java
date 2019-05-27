@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -110,7 +109,6 @@ public class Main2Activity extends FragmentActivity  {
                     public boolean onMenuItemClick(MenuItem item) {
                         switch(item.getItemId()){
                             case R.id.one:
-                                Log.d("one one one", "one one");
                                 pickFolder();
                                 return true;
 
@@ -138,10 +136,8 @@ public class Main2Activity extends FragmentActivity  {
                     if (detector.getCurrentSpan() - detector.getPreviousSpan() < -1) {
                         if (mCurrentLayoutManager == mGridLayoutManager1) {
 
-                            ImageView image = findViewById(R.id.image);
-                            image.getLayoutParams().height = 10;
-
                             mCurrentLayoutManager = mGridLayoutManager2;
+                            recyclerView.setLayoutManager(mGridLayoutManager2);
                             return true;
                         } else if (mCurrentLayoutManager == mGridLayoutManager2) {
                             mCurrentLayoutManager = mGridLayoutManager3;
@@ -211,7 +207,6 @@ public class Main2Activity extends FragmentActivity  {
         listOfImages = folderPath.listFiles();
         mImageUrls.clear();
         mNames.clear();
-        Log.d("My app", "I am here");
 
 
         for(int i=0; i<listOfImages.length;i++){

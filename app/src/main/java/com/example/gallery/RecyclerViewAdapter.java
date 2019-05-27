@@ -21,7 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final String TAG = "RecyclerViewAdapter";
 
@@ -29,7 +29,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
     private ArrayList<String> mImages = new ArrayList<>();
     private Context mContext;
     private int GridOrList=2;
-    public View view0;
 
     public RecyclerViewAdapter(ArrayList<String> mImageNames, ArrayList<String> mImages, Context mContext, int type) {
         this.mImageNames = mImageNames;
@@ -43,13 +42,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         // Note that unlike in ListView adapters, types don't have to be contiguous
         return GridOrList;
     }
-    public void updateLayoutInflater(){
-
-    }
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        view0 = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_listitem, parent, false);
+        View view0 = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_listitem, parent, false);
         View view2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_griditem, parent, false);
         switch (viewType) {
             case 0: return new ViewHolder0(view0);
